@@ -1,0 +1,11 @@
+{
+  "id": "citrine-sheets",
+  "name": "Citrine Sheets",
+  "version": "0.1.0",
+  "entry": "index.html",
+  "icon": "▦",
+  "window": {
+    "width": 1100,
+    "height": 720
+  }
+}

@@ -1,0 +1,139 @@
+.vela-calc {
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vela-calc__display {
+  min-height: 84px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  border: 1px solid var(--vela-color-border);
+  border-radius: var(--vela-radius-md);
+  background: rgba(2, 6, 23, 0.45);
+  text-align: right;
+}
+
+.vela-calc__expr {
+  min-height: 18px;
+  color: var(--vela-color-muted);
+  font-family: var(--vela-font-mono);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.vela-calc__expr[data-error="true"] {
+  color: var(--vela-color-danger);
+}
+
+.vela-calc__result {
+  font-family: var(--vela-font-mono);
+  font-size: 28px;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.vela-calc__modes,
+.vela-calc__sci,
+.vela-calc__pad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.vela-calc__column {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vela-calc__key {
+  appearance: none;
+  width: 100%;
+  min-height: 36px;
+  padding: 0 4px;
+  border: 1px solid var(--vela-color-border);
+  border-radius: var(--vela-radius-sm);
+  background: var(--vela-color-surface-raised);
+  color: var(--vela-color-text);
+  font-family: var(--vela-font-mono);
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease, transform 120ms ease;
+}
+
+.vela-calc__key:hover {
+  border-color: var(--vela-color-accent);
+}
+
+.vela-calc__key:active {
+  transform: translateY(1px);
+}
+
+.vela-calc__key--mode {
+  border-color: transparent;
+  background: transparent;
+  color: var(--vela-color-muted);
+}
+
+.vela-calc__key--sci {
+  color: var(--vela-color-accent);
+}
+
+.vela-calc__key--mode.is-active {
+  color: var(--vela-color-accent-strong);
+  background: rgba(56, 189, 248, 0.12);
+}
+
+.vela-calc__key--op {
+  color: var(--vela-color-accent-strong);
+  background: #2a3348;
+}
+
+.vela-calc__key--equals {
+  border-color: var(--vela-color-accent);
+  background: var(--vela-color-accent);
+  color: #082f49;
+  font-weight: 600;
+}
+
+.vela-calc__history {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 110px;
+  overflow: auto;
+  border-top: 1px solid var(--vela-color-border);
+  padding-top: 6px;
+}
+
+.vela-calc__history-title,
+.vela-calc__history-empty {
+  color: var(--vela-color-muted);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vela-calc__history-item {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--vela-color-muted);
+  cursor: pointer;
+  justify-content: flex-start;
+  padding: 3px 4px;
+  border-radius: 5px;
+  font-family: var(--vela-font-mono);
+  font-size: 10px;
+  text-align: left;
+}
+
+.vela-calc__history-item:hover {
+  background: rgba(79, 140, 255, 0.1);
+  color: var(--vela-color-text);
+}

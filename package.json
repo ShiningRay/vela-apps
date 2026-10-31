@@ -1,0 +1,19 @@
+{
+  "name": "vela-apps",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "VPK demo apps for Vela Desktop: calculator, Citrine Sheets and Market Terminal.",
+  "packageManager": "pnpm@12.11.2",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test"
+  },
+  "devDependencies": {
+    "fflate": "^0.8.3"
+  }
+}
