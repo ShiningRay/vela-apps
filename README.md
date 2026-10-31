@@ -2,6 +2,8 @@
 
 Vela 桌面应用的 `.vpk` 示例包，独立于 [Vela](https://github.com/ShiningRay/vela) 主仓构建与发布。
 
+最新发布：[v0.1.0](https://github.com/ShiningRay/vela-apps/releases/tag/v0.1.0)。
+
 ## 应用
 
 | 应用 | 来源 | 产物 |
