@@ -26,6 +26,12 @@ const apps = [
     source: ".",
     files: ["index.html", "styles.css", "market.js"],
   },
+  {
+    id: "sales-board",
+    dir: "apps/sales-board",
+    source: ".",
+    files: ["index.html", "styles.css", "manifest.json", "data/seed.json"],
+  },
 ];
 
 async function collectFiles(dir, prefix = "") {

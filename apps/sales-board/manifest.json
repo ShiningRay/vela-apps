@@ -1,0 +1,49 @@
+{
+  "id": "sales-board",
+  "name": "Sales Board",
+  "version": "1.0.0",
+  "entry": "index.html",
+  "icon": "▤",
+  "window": { "width": 720, "height": 520 },
+  "agent": {
+    "surfaces": [
+      {
+        "id": "kpi",
+        "kind": "widget",
+        "title": "Sales today",
+        "geometry": { "x": 40, "y": 60, "width": 220, "height": 120 },
+        "content": { "type": "chart", "spec": { "kind": "kpi", "title": "Sales today", "decimals": 1, "yUnit": "k", "encoding": { "value": "revenue" } }, "dataKey": "daily" }
+      },
+      {
+        "id": "trend",
+        "kind": "widget",
+        "title": "Revenue trend",
+        "geometry": { "x": 280, "y": 60, "width": 420, "height": 260 },
+        "content": { "type": "chart", "spec": { "kind": "bar", "title": "Revenue trend", "encoding": { "x": "date", "y": "revenue" } }, "dataKey": "daily" }
+      }
+    ],
+    "charts": [
+      { "id": "line", "title": "Revenue line", "spec": { "kind": "line", "encoding": { "x": "date", "y": "revenue" } }, "dataKey": "daily" }
+    ],
+    "datasources": [
+      { "key": "daily", "tool": "query_daily" }
+    ],
+    "tools": [
+      {
+        "name": "query_daily",
+        "type": "http",
+        "description": "Fetch daily revenue rows from the demo API",
+        "endpoint": "https://api.example.com/daily",
+        "method": "GET",
+        "params": { "from": "string", "limit": "number" }
+      },
+      {
+        "name": "seed_rows",
+        "type": "static",
+        "description": "Seed revenue rows bundled with the package",
+        "path": "data/seed.json"
+      }
+    ]
+  },
+  "permissions": ["surface:create", "signal:publish", "net:api.example.com"]
+}
